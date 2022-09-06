@@ -7,8 +7,11 @@ import Modalform from "./modal";
 // import Carousel from 'react-bootstrap/Carousel';
 //import "./book.css";
 
+
+
 import Carousel from "react-bootstrap/Carousel";
 import axios from "axios";
+
 
 
 
@@ -16,6 +19,9 @@ class BestBooks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+
+
+
 
       show: false,
       status: "",
@@ -27,7 +33,11 @@ class BestBooks extends React.Component {
 
   componentDidMount = () => {
     axios
+
+      .get(`https://abeerrrrr.herokuapp.com/books`)
+
       .get(`http://localhost:3001/books`)
+
       .then((result) => {
         console.log(result.data);
         this.setState({
@@ -67,7 +77,10 @@ class BestBooks extends React.Component {
     };
     console.log(obj);
     axios
+
+      .post(`https://abeerrrrr.herokuapp.com/addBook`, obj)
       .post(`http://localhost:3001/addBook`, obj)
+
       .then((result) => {
         return this.setState({
           books: result.data,
@@ -81,7 +94,11 @@ class BestBooks extends React.Component {
 
   deleteBook = (id) => {
     axios
+
+      .delete(`https://abeerrrrr.herokuapp.com/deleteBook/${id}`) //http://localhost:3010/deleteCat?id=${id}
+
       .delete(`http://localhost:3001/deleteBook/${id}`) //http://localhost:3010/deleteCat?id=${id}
+
       .then((result) => {
         this.setState({
           books: result.data,
@@ -120,6 +137,9 @@ class BestBooks extends React.Component {
     };
     const id = this.state.currentBook._id;
     axios
+
+      .put(`https://abeerrrrr.herokuapp.com/updateBook/${id}`, obj)
+
       .put(`http://localhost:3001/updateBook/${id}`, obj)
 
       books: [],
@@ -131,6 +151,7 @@ class BestBooks extends React.Component {
     axios
       .get(`http://localhost:3000/getbook`)
 
+
       .then((result) => {
         this.setState({
           books: result.data,
@@ -139,6 +160,7 @@ class BestBooks extends React.Component {
         this.handleCloseUpdate();
 
 
+        this.handleCloseUpda
       })
       .catch((err) => {
         console.log(err);
@@ -146,6 +168,9 @@ class BestBooks extends React.Component {
   };
 
   render() {
+
+
+
 
     return (
       <div>
@@ -208,6 +233,7 @@ class BestBooks extends React.Component {
 export default BestBooks;
 
 
+
     /* TODO: render all the books in a Carousel */
     return (
       <>
@@ -242,4 +268,5 @@ export default BestBooks;
 }
 
 export default BestBooks;
+
 

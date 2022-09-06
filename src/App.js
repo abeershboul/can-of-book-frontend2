@@ -18,11 +18,11 @@ class App extends React.Component {
           <Routes>
             <Route 
               exact path="/"
-              element={<BookFormModal />}
+              element={<BestBooks />}
             >
               <Route 
               exact path="/2"
-              element={<BestBooks />}
+              element={<BookFormModal />}
             ></Route>
 
             </Route>

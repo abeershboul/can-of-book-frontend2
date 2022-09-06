@@ -9,8 +9,10 @@ import Modalform from "./modal";
 
 
 
+
 import Carousel from "react-bootstrap/Carousel";
 import axios from "axios";
+
 
 
 
@@ -19,6 +21,8 @@ class BestBooks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+
+
 
 
 
@@ -36,7 +40,11 @@ class BestBooks extends React.Component {
 
       .get(`https://abeerrrrr.herokuapp.com/books`)
 
+
+      .get(`https://abeerrrrr.herokuapp.com/books`)
+
       .get(`http://localhost:3001/books`)
+
 
       .then((result) => {
         console.log(result.data);
@@ -79,6 +87,9 @@ class BestBooks extends React.Component {
     axios
 
       .post(`https://abeerrrrr.herokuapp.com/addBook`, obj)
+
+
+      .post(`https://abeerrrrr.herokuapp.com/addBook`, obj)
       .post(`http://localhost:3001/addBook`, obj)
 
       .then((result) => {
@@ -97,7 +108,11 @@ class BestBooks extends React.Component {
 
       .delete(`https://abeerrrrr.herokuapp.com/deleteBook/${id}`) //http://localhost:3010/deleteCat?id=${id}
 
+
+      .delete(`https://abeerrrrr.herokuapp.com/deleteBook/${id}`) //http://localhost:3010/deleteCat?id=${id}
+
       .delete(`http://localhost:3001/deleteBook/${id}`) //http://localhost:3010/deleteCat?id=${id}
+
 
       .then((result) => {
         this.setState({
@@ -140,6 +155,9 @@ class BestBooks extends React.Component {
 
       .put(`https://abeerrrrr.herokuapp.com/updateBook/${id}`, obj)
 
+
+      .put(`https://abeerrrrr.herokuapp.com/updateBook/${id}`, obj)
+
       .put(`http://localhost:3001/updateBook/${id}`, obj)
 
       books: [],
@@ -160,7 +178,11 @@ class BestBooks extends React.Component {
         this.handleCloseUpdate();
 
 
+        this.handleCloseUpdate();
+
+
         this.handleCloseUpda
+
       })
       .catch((err) => {
         console.log(err);
@@ -168,6 +190,9 @@ class BestBooks extends React.Component {
   };
 
   render() {
+
+
+
 
 
 
@@ -231,6 +256,7 @@ class BestBooks extends React.Component {
 }
 
 export default BestBooks;
+
 
 
 

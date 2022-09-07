@@ -3,13 +3,18 @@ import axios from "axios";
 import UpdateForm from "./UpdateForm";
 import Button from "react-bootstrap/Button";
 
+
 import Modalform from "./modal";
 // import Carousel from 'react-bootstrap/Carousel';
+
+
+
 
 class BestBooks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+
       show: false,
       status: "",
       books: [],
@@ -20,7 +25,9 @@ class BestBooks extends React.Component {
 
   componentDidMount = () => {
     axios
+
       .get(`https://abeerrrrr.herokuapp.com/books`)
+
       .then((result) => {
         console.log(result.data);
         this.setState({
@@ -114,6 +121,7 @@ class BestBooks extends React.Component {
     };
     const id = this.state.currentBook._id;
     axios
+
  .put(`https://abeerrrrr.herokuapp.com/updateBook/${id}`, obj)
  .then((result) => {
     this.setState({
@@ -186,3 +194,9 @@ return (
 }
 
 export default BestBooks;    
+
+
+    
+
+
+
